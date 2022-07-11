@@ -48,21 +48,33 @@ query findCompany {
   apple: company(id: "1") {
     id
     name
-    users {
-      firstName
-      age
-    }
+    description
   }
   google: company(id: "2") {
     id
     name
-    users {
-      firstName
-      age
-    }
+    description
   }
 }
 ```
 
-### 4
+### 4: To avoid writing same fields multiple times, can use fragment:
+```
+query findCompany {
+  apple: company(id: "1") {
+    ...companyDetails
+  }
+  google: company(id: "2") {
+    ...companyDetails
+  }
+}
+
+fragment companyDetails on Company {
+  	id
+    name
+    description
+}
+
+```
+
 ### 5

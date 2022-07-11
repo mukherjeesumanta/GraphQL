@@ -3,6 +3,7 @@
 ## Different types of GraphQL queries
 
 ### 1
+
 ```
 {
   company(id: "2") {
@@ -23,6 +24,7 @@
 ```
 
 ### 2
+
 ```
 query findCompany {
   company(id: "2") {
@@ -43,6 +45,7 @@ query findCompany {
 ```
 
 ### 3: Same field multiple times(here company) in one query give error, so name them:
+
 ```
 query findCompany {
   apple: company(id: "1") {
@@ -59,6 +62,7 @@ query findCompany {
 ```
 
 ### 4: To avoid writing same fields multiple times, can use fragment:
+
 ```
 query findCompany {
   apple: company(id: "1") {

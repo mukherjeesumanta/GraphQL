@@ -3,6 +3,7 @@
 ## Different types of GraphQL queries
 
 ### 1
+```
 {
   company(id: "2") {
     id
@@ -19,8 +20,10 @@
     }
   }
 }
+```
 
 ### 2
+```
 query findCompany {
   company(id: "2") {
     id
@@ -37,8 +40,10 @@ query findCompany {
     }
   }
 }
+```
 
 ### 3: Same field multiple times(here company) in one query give error, so name them:
+```
 query findCompany {
   apple: company(id: "1") {
     id
@@ -57,7 +62,7 @@ query findCompany {
     }
   }
 }
-
+```
 
 ### 4
 ### 5

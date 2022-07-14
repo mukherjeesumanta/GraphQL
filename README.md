@@ -69,16 +69,54 @@ query findCompany {
     ...companyDetails
   }
   google: company(id: "2") {
-    ...companyDetails
+    ...companyDetails2
   }
 }
 
 fragment companyDetails on Company {
-  	id
-    name
-    description
+  id
+  name
+  description
+}
+
+fragment companyDetails2 on Company {
+  id
+  name
+}
+
+// response
+{
+  "data": {
+    "apple": {
+      "id": "1",
+      "name": "Apple",
+      "description": "iphone"
+    },
+    "google": {
+      "id": "2",
+      "name": "Google"
+    }
+  }
 }
 
 ```
 
-### 5
+### 5: Mutation
+```
+mutation {
+  addUser(firstName: "Sumanta", age: 39) {
+    id,
+    firstName,
+    age
+  }
+}
+//response
+{
+  "data": {
+    "addUser": {
+      "id": "JNdxanL",
+      "firstName": "Sumanta",
+      "age": 39
+    }
+  }
+}
